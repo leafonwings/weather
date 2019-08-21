@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/micro-weather-eureka-server/micro-weather-eureka-server.iml" filepath="$PROJECT_DIR$/micro-weather-eureka-server/micro-weather-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msa-weather-city-eureka/msa-weather-city-eureka.iml" filepath="$PROJECT_DIR$/msa-weather-city-eureka/msa-weather-city-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msa-weather-collection-eureka-feign/msa-weather-collection-eureka-feign.iml" filepath="$PROJECT_DIR$/msa-weather-collection-eureka-feign/msa-weather-collection-eureka-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msa-weather-data-eureka/msa-weather-data-eureka.iml" filepath="$PROJECT_DIR$/msa-weather-data-eureka/msa-weather-data-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msa-weather-eureka-client-zuul/msa-weather-eureka-client-zuul.iml" filepath="$PROJECT_DIR$/msa-weather-eureka-client-zuul/msa-weather-eureka-client-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msa-weather-report-eureka-feign-gateway-hystrix/msa-weather-report-eureka-feign-gateway-hystrix.iml" filepath="$PROJECT_DIR$/msa-weather-report-eureka-feign-gateway-hystrix/msa-weather-report-eureka-feign-gateway-hystrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/weather.iml" filepath="$PROJECT_DIR$/.idea/weather.iml" />
+    </modules>
+  </component>
+</project>

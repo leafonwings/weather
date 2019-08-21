@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="msa-weather-report-eureka-feign-gateway-hystrix" />
+        <module name="micro-weather-eureka-server" />
+        <module name="msa-weather-eureka-client-zuul" />
+        <module name="msa-weather-data-eureka" />
+        <module name="msa-weather-city-eureka" />
+        <module name="msa-weather-collection-eureka-feign" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="micro-weather-eureka-server" target="1.8" />
+      <module name="msa-weather-city-eureka" target="1.8" />
+      <module name="msa-weather-collection-eureka-feign" target="1.8" />
+      <module name="msa-weather-data-eureka" target="1.8" />
+      <module name="msa-weather-eureka-client-zuul" target="1.8" />
+      <module name="msa-weather-report-eureka-feign-gateway-hystrix" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="micro-weather-eureka-server" options="-parameters" />
+      <module name="msa-weather-city-eureka" options="-parameters" />
+      <module name="msa-weather-collection-eureka-feign" options="-parameters" />
+      <module name="msa-weather-data-eureka" options="-parameters" />
+      <module name="msa-weather-eureka-client-zuul" options="-parameters" />
+      <module name="msa-weather-report-eureka-feign-gateway-hystrix" options="-parameters" />
+    </option>
+  </component>
+</project>
