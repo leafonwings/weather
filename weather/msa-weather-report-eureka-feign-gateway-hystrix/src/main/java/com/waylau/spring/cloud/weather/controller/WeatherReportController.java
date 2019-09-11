@@ -46,7 +46,7 @@ public class WeatherReportController {
 			logger.error("Exception!", e);
 		}
 		
-		model.addAttribute("title", "老卫的天气预报");
+		model.addAttribute("title", "马马的天气预报");
 		model.addAttribute("cityId", cityId);
 		model.addAttribute("cityList", cityList);
 		model.addAttribute("report", weatherReportService.getDataByCityId(cityId));

@@ -1,8 +1,9 @@
 package com.waylau.spring.cloud.weather.job;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.waylau.spring.cloud.weather.service.CityClient;
+import com.waylau.spring.cloud.weather.service.MailNotificationService;
+import com.waylau.spring.cloud.weather.service.WeatherDataCollectionService;
+import com.waylau.spring.cloud.weather.vo.City;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
@@ -10,9 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
-import com.waylau.spring.cloud.weather.service.CityClient;
-import com.waylau.spring.cloud.weather.service.WeatherDataCollectionService;
-import com.waylau.spring.cloud.weather.vo.City;
+import java.util.List;
 
 /**
  * Weather Data Sync Job.
@@ -29,7 +28,10 @@ public class WeatherDataSyncJob extends QuartzJobBean {
 
 	@Autowired
 	private CityClient cityClient;
-	
+
+	@Autowired
+	private MailNotificationService mailNotificationService;
+
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
 		logger.info("Weather Data Sync Job. Start！");
@@ -51,7 +53,11 @@ public class WeatherDataSyncJob extends QuartzJobBean {
 			
 			weatherDataCollectionService.syncDateByCityId(cityId);
 		}
-		
+		try {
+			mailNotificationService.mailNotice();
+		} catch (Exception e) {
+			logger.error("调用邮件发送模块异常");
+		}
 		logger.info("Weather Data Sync Job. End！");
 	}
 

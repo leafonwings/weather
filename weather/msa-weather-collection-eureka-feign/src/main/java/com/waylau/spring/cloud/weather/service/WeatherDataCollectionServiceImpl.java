@@ -1,13 +1,13 @@
 package com.waylau.spring.cloud.weather.service;
 
-import java.util.concurrent.TimeUnit;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Weather Data Collection Service.
@@ -26,7 +26,8 @@ public class WeatherDataCollectionServiceImpl implements WeatherDataCollectionSe
 	
 	@Autowired
 	private StringRedisTemplate stringRedisTemplate;
-	
+
+
 	@Override
 	public void syncDateByCityId(String cityId) {
 		String uri = WEATHER_URI + "citykey=" + cityId;
@@ -51,6 +52,8 @@ public class WeatherDataCollectionServiceImpl implements WeatherDataCollectionSe
 		
 		// 数据写入缓存
 		ops.set(key, strBody, TIME_OUT, TimeUnit.SECONDS);
+
+ 		//邮件通知天气情况
 
 	}
 }

@@ -18,12 +18,12 @@ public class WeatherReportServiceImpl implements WeatherReportService {
 	private DataClient dataClient;
 	@Override
 	public Weather getDataByCityId(String cityId) {
-		
+		//天气数据API服务暂不可用！
 		// 由天气数据API微服务来提供
 		WeatherResponse resp = dataClient.getDataByCityId(cityId);
 		Weather data = null;
 		if (resp != null ) {
-			resp.getData();
+			data=resp.getData();
 		}
 		return data;
 	}
