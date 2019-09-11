@@ -42,8 +42,9 @@ public class MailController {
 				to = receiver.split("!!")[1];
 				try {
 					WeatherResponse res = dataClient.getDataByCityId(cityId);
-					subject = res.getData().getCity()+"subject";
-
+					Weather data = res.getData();
+					subject = data.getCity()+"subject";
+					content  =getWeatherContent(data);
 					mailDataService.sendSimpleMail(to,subject,content);
 				} catch (Exception e) {
 					logger.error("发送邮件异常");
@@ -54,8 +55,7 @@ public class MailController {
 	}
 
 
-	private String getWeatherContent(WeatherResponse res){
-		Weather data  = res.getData();
+	private String getWeatherContent(Weather data){
 		String city = data.getCity();
 		String ganmao = data.getGanmao();
 		String wendu = data.getWendu();
@@ -73,9 +73,6 @@ public class MailController {
 						+"最近天气情况：\r\n"
 						+yes+"\r\n"
 						+forecastStr;
-
-
-
-		return "";
+		return content;
 	}
 }
